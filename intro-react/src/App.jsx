@@ -2,19 +2,24 @@ import { Component } from 'react'
 import './App.css'
 import Card from './Card'
 
-export default class App extends Component{
-  render(){
+export default function App(){
+  const cards = [
+    {
+      title: "Oi mundo",
+      text: "olá visitante"
+    },
+    {
+      title: "Bonjour le monde",
+      text: "Salut visiteur"
+    },
+    {
+      title: "Chat 😸 et Chien 🐶",
+      text: "Cheval"
+    }
+  ]
     return (
       <>
-        <Card title="Oi mundo" text="olá visitante">
-          Portugues
-        </Card>
-        <Card title="Bonjour le monde" text="Salut visiteur">
-          <Card title="Chat 😸" text="Chien 🐶">
-            Cheval 🐴
-          </Card>
-        </Card>
+        {cards.map(({title, text})=> <Card title={title} text={text}></Card> )}
       </>
     )
-  }
 }

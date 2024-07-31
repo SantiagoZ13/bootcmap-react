@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import './App.css'
 import Card from './Card'
+import Button from './Button'
 
 export default function App(){
   const cards = [
@@ -19,6 +20,7 @@ export default function App(){
   ]
     return (
       <>
+        <Button></Button>
         {cards.map(({title, text})=> <Card title={title} text={text}></Card> )}
       </>
     )

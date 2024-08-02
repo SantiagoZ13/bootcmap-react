@@ -1,4 +1,4 @@
-@use "../tools";
+@use "../style/tools.scss";
 
 .card {
     display: flex;
@@ -17,11 +17,12 @@
     gap: 8px 0;
 }
 
-.card p{
-    text-align:justify;
+.card p {
+    text-align: justify;
     font-size: 14px;
 }
-.card h2{
+
+.card h2 {
     font-size: 18px;
 }
 
@@ -65,30 +66,28 @@
     color: var(--color-black-pearl-400);
 }
 
-
 @include tools.desktop {
-
-    
-    .card:nth-child(4n) {
+    .card.is-extended {
         background: var(--color-aquarius-100);
         flex-direction: row;
-        
-        
         grid-column: 1/4;
         padding: 48px;
         gap: 48px;
+
         &>img {
             align-self: center;
             max-width: 560px;
             height: 100%;
         }
-        &>section{
+
+        &>section {
             gap: 12px 0;
             justify-content: space-around;
-            
+
         }
     }
-    .card:nth-child(8n){
+
+    .card.is-reversed {
         flex-direction: row-reverse;
     }
 }

@@ -1,3 +1,6 @@
+import './Card.scss'
+import classnames from 'classnames'
+
 function Tag({children, link = '#'}){
     return(
         <span className="tag tag-primary">
@@ -6,19 +9,24 @@ function Tag({children, link = '#'}){
     )
 }
 
-function Card({unsplashID, unsplashAlt, title, extract, author, date}) {
+function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
-        <article className="card">
+        <article className={classnames("card", {
+            "is-extended": isExtended,
+            "is-reverse": isReversed
+        })}>
         <img src={`https://images.unsplash.com/${unsplashID}`} alt={unsplashAlt} />
         <section>
             <header>
 
                 <div className="tags">
-                    <Tag>Web Components</Tag>
-                    <Tag>CSS</Tag>
-                    
+                    {tags.map((tag)=> <Tag>{tag}</Tag>)}
                 </div>
                 <h2 className="heading heading-sm font-bold">{title}</h2>
+                
+                <time className="help-text paragraph paragraph-xs font-regular" dateTime={date}>
+                    {date}
+                </time>
             </header>
             <p className="paragraph paragraph-sm font-regular">{extract}</p>
             <footer>
@@ -26,9 +34,7 @@ function Card({unsplashID, unsplashAlt, title, extract, author, date}) {
                     <img src="https://i.pravatar.cc/100" alt="Autor del post" />
                     <span className="paragraph paragraph-xs font-bold">{author}</span>
                 </div>
-                <time className="help-text paragraph paragraph-xs font-regular" dateTime={date}>
-                    {date}
-                </time>
+                <p className="help-text paragraph paragraph-xs font-regular">{readTime}</p>
             </footer>
         </section>
 

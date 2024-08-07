@@ -1,5 +1,5 @@
+import classNames from 'classnames'
 import './Card.scss'
-import classnames from 'classnames'
 
 function Tag({children, link = '#'}){
     return(
@@ -11,7 +11,7 @@ function Tag({children, link = '#'}){
 
 function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
-        <article className={classnames("card", {
+        <article className={classNames("card", {
             "is-extended": isExtended,
             "is-reverse": isReversed
         })}>

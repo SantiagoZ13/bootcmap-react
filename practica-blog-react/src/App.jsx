@@ -1,5 +1,6 @@
-import Card from './components/Card'
-import Button from './components/Button'
+import Card from './components/Card/Card'
+import Button from './components/Button/Button'
+import Link from './components/Link/Link'
 function App() {
 
   const articles = [
@@ -92,8 +93,8 @@ function App() {
           <img src="/images/logos/undefined-shell.svg" alt="logo de undefined shell" />
           <nav>
             <ul className="nav-list">
-              <li><a href="#" className="text-button text-button-md font-bold is-active">Inicio</a></li>
-              <li><a href="#" className="text-button text-button-md font-bold">Suscribete</a></li>
+              <Link isActive={true}>Inicio</Link>
+              <Link>Suscribete</Link>
               <Button type="primary">Undefined Academy</Button>
               <Button type="secondary">Discord</Button>
             </ul>

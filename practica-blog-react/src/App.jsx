@@ -1,5 +1,5 @@
 import Card from './components/Card'
-
+import Button from './components/Button'
 function App() {
 
   const articles = [
@@ -94,8 +94,8 @@ function App() {
             <ul className="nav-list">
               <li><a href="#" className="text-button text-button-md font-bold is-active">Inicio</a></li>
               <li><a href="#" className="text-button text-button-md font-bold">Suscribete</a></li>
-              <li><button className="button button-primary">Undefined Academy</button></li>
-              <li><button className="button button-secondary">Discord</button></li>
+              <Button type="primary">Undefined Academy</Button>
+              <Button type="secondary">Discord</Button>
             </ul>
           </nav>
         </header>

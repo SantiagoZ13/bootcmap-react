@@ -1,13 +1,7 @@
 import classNames from 'classnames'
+import Tag from '../Tag'
 import './Card.scss'
 
-function Tag({children, link = '#'}){
-    return(
-        <span className="tag tag-primary">
-            <a href={link}>{children}</a>
-        </span>
-    )
-}
 
 function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
@@ -19,8 +13,11 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
         <section>
             <header>
 
-                <div className="tags">
-                    {tags.map((tag)=> <Tag>{tag}</Tag>)}
+                <div>
+                    {tags.map((tag)=> {
+                        return <Tag>{tag}</Tag>
+                        })
+                    }
                 </div>
                 <h2 className="heading heading-sm font-bold">{title}</h2>
                 

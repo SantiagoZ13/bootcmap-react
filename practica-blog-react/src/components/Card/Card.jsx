@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import Tag from '../Tag'
 import './Card.scss'
-
+import Tag from '../Tag'
+import Author from '../Author'
 
 function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
@@ -15,7 +15,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
 
                 <div>
                     {tags.map((tag)=> {
-                        return <Tag>{tag}</Tag>
+                        return <Tag isExtended={isExtended}>{tag}</Tag>
                         })
                     }
                 </div>
@@ -27,10 +27,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
             </header>
             <p className="paragraph paragraph-sm font-regular">{extract}</p>
             <footer>
-                <div className="author">
-                    <img src="https://i.pravatar.cc/100" alt="Autor del post" />
-                    <span className="paragraph paragraph-xs font-bold">{author}</span>
-                </div>
+                <Author name={author}></Author>
                 <p className="help-text paragraph paragraph-xs font-regular">{readTime}</p>
             </footer>
         </section>

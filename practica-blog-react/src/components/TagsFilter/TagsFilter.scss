@@ -1,33 +1,40 @@
 @use "../../style/tools.scss";
-.tags-filter{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 24px 0;
-    @include tools.desktop{
-        flex-wrap: nowrap;
-    }
+
+.tags-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px 0;
+
+  @include tools.desktop {
+    flex-wrap: nowrap;
+  }
 }
-.tags-filter .filter-list{
-    gap: 32px;
+
+.tags-filter .filter-list {
+  gap: 12px;
 }
-.filter-list{
-    overflow-y: hidden;
-    overflow-x: auto;
-    height: 50px;
+
+.filter-list {
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 50px;
 }
+
 .filter {
-    white-space: nowrap;
-  }
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.is-active-filter .filter {
+  background-color: var(--color-black-pearl-900);
+  color: var(--color-aquarius-50);
   
-  .is-active-filter .filter {
-    background-color: var(--color-black-pearl-900);
-    color: var(--color-aquarius-50);
-    padding: 8px 12px;
-  }
-  
-  .filter-list-scroll-hider {
-    overflow-y: hidden;
-    height: 40px;
-  }
+}
+
+.filter-list-scroll-hider {
+  overflow-y: hidden;
+  height: 40px;
+}

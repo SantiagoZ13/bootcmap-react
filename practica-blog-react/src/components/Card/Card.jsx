@@ -2,6 +2,9 @@ import classNames from 'classnames'
 import './Card.scss'
 import Tag from '../Tag'
 import Author from '../Author'
+import Time from '../Time'
+import Paragraph from '../Paragraph'
+
 
 function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
@@ -21,14 +24,12 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
                 </div>
                 <h2 className="heading heading-sm font-bold">{title}</h2>
                 
-                <time className="help-text paragraph paragraph-xs font-regular" dateTime={date}>
-                    {date}
-                </time>
+                <Time>{date}</Time>
             </header>
-            <p className="paragraph paragraph-sm font-regular">{extract}</p>
+            <Paragraph>{extract}</Paragraph>
             <footer>
                 <Author name={author}></Author>
-                <p className="help-text paragraph paragraph-xs font-regular">{readTime}</p>
+                <Paragraph size='xs' isHelpText as="span">{readTime}</Paragraph>
             </footer>
         </section>
 

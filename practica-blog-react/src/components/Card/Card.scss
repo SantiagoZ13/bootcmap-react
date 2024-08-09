@@ -49,10 +49,6 @@
     color: var(--color-black-pearl-900);
 }
 
-.help-text {
-    color: var(--color-black-pearl-400);
-}
-
 @include tools.desktop {
     .card.is-extended {
         background: var(--color-aquarius-100);

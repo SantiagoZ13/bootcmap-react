@@ -1,6 +1,5 @@
 import Paragraph from "../Paragraph";
-
-const humanize = (date) => date
+import humanize from '../../utils/humanize'
 
 function Time({ children }) {
     return (

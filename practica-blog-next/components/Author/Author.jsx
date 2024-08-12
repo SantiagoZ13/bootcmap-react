@@ -5,7 +5,7 @@ function Author({ name, avatarUrl = "https://i.pravatar.cc/100", avatarAlt = "Au
     return (
         <div className={styles.author}>
             <img src={avatarUrl} alt={avatarAlt} />
-            <Paragraph size="xs" weight="bold">{name}</Paragraph>
+            <Paragraph size="xs" weight="regular">{name}</Paragraph>
         </div>
     )
 }

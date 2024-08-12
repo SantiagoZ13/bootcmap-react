@@ -24,14 +24,14 @@
 
 .filter {
   white-space: nowrap;
-  padding: 8px 12px;
+  padding: 8px 6px;
   border-radius: 4px;
 }
 
 .is-active-filter .filter {
   background-color: var(--color-black-pearl-900);
   color: var(--color-aquarius-50);
-  
+  padding: 8px 12px;
 }
 
 .filter-list-scroll-hider {

@@ -3,7 +3,7 @@ import styles from './Tag.module.scss'
 
 function Tag({children, link = '#', isExtended}){
     return(
-        <span className={classNames("tag",{
+        <span className={classNames(styles.tag,{
             [styles["tag-primary"]]: !isExtended,
             [styles["tag-secondary"]]: isExtended
             

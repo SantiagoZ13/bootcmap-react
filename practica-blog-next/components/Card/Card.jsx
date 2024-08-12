@@ -10,8 +10,8 @@ import styles from './Card.module.scss'
 function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, readTime, isExtended = false, isReversed = false}) {
     return (
         <article className={classNames(styles.card, {
-            "is-extended": isExtended,
-            "is-reverse": isReversed
+            [styles["is-extended"]]: isExtended,
+            [styles["is-reverse"]]: isReversed
         })}>
         <img src={`https://images.unsplash.com/${unsplashID}`} alt={unsplashAlt} />
         <section>

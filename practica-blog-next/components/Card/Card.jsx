@@ -1,9 +1,10 @@
 import classNames from 'classnames'
 
-import Tag from '../Tag'
-import Author from '../Author'
-import Time from '../Time'
-import Paragraph from '../Paragraph'
+import Tag from '@/components/Tag'
+import Author from '@/components/Author'
+import Time from '@/components/Time'
+import Paragraph from '@/components/Paragraph'
+import Heading from '@/components/Heading'
 
 import styles from './Card.module.scss'
 
@@ -22,7 +23,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
                         })
                     }
                 </div>
-                <h2 className="heading heading-sm font-bold">{title}</h2>
+                <Heading>{title}</Heading>
                 
                 <Time>{date}</Time>
             </header>

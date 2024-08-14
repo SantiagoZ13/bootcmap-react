@@ -11,7 +11,7 @@ const Filter = ({ children, isActive, href = "#", onClick}) =>{
         <li className={classNames({
             [styles["is-active-filter"]]: isActive
         })}>
-            <a className={styles.filter} href={href} onClick={event =>{
+            <a className={classNames(styles.filter)} href={href} onClick={event =>{
                 event.preventDefault()
                 onClick(children)
             }}>

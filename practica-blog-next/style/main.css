@@ -1,5 +1,5 @@
 
-/* Custom properties (CSS Variables) */
+/* Settings */
 :root{
     --color-white: #FFF;
     --color-black-pearl-50: #E4EBEE;
@@ -21,4 +21,18 @@
 
     --container-max-width: 1180px;
     --container-padding: 0 24px;
+}
+
+
+/* Generic */
+a{
+    text-decoration: none;
+}
+
+/* Utilities */
+.font-regular{
+    font-weight: 400;
+}
+.font-bold{
+    font-weight: 700;
 }

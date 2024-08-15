@@ -12,7 +12,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
     return (
         <article className={classNames(styles.card, {
             [styles["is-extended"]]: isExtended,
-            [styles["is-reverse"]]: isReversed
+            [styles["is-reversed"]]: isReversed
         })}>
         <img src={`https://images.unsplash.com/${unsplashID}`} alt={unsplashAlt} />
         <section>

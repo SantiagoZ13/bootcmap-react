@@ -1,11 +1,24 @@
+import { useState, useEffect } from 'react'
+
 import Card from '@/components/Card/Card'
 import Button from '@/components/Button'
 import Link from '@/components/Link'
 import TagsFilter from '@/components/TagsFilter'
-import articles from '@/data/articles.json'
 import filters from '@/data/filters.json'
 
+
+
 function Home() {
+  const [articles, setArticles] = useState([])
+
+  useEffect(() =>{
+    async function fetchPost(){
+      const jsonResponse = await fetch("/api/posts").then((data) => data.json())
+      setArticles(jsonResponse)
+    } 
+    fetchPost()
+  }, [])
+
   return (
     <>
       <div className="main-container">
@@ -38,8 +51,7 @@ function Home() {
               {articles.map((article, index) =>{
                 const isExtended = (index + 1) % 4 === 0
                 const isReversed = (index + 1) % 8 === 0
-
-                return <Card {...article} isExtended={isExtended} isReverse={isReversed}></Card>
+                return <Card {...article} isExtended={isExtended} isReversed={isReversed}></Card>
 
             })}
             </div>

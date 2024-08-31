@@ -14,8 +14,18 @@ app.get("/sum/:num1/:num2", (req, res) =>{
 })
 
 app.use(express.json()) // Middleware
-app.get("/fullname", (req, res) =>{
+function fullnameMiddleware(req, res, next){
     const {name, lastname} = req.body
+    if(!name || !lastname){
+        res.status(400).send("Falta nombre o apellido")
+    }
+    req.fullname = `${name} ${lastname}`
+    next()
+}
+
+app.get("/fullname", fullnameMiddleware, (req, res) =>{
+    const {name, lastname} = req.body
+    console.log(req.fullname)
     res.send(`Bienvenido ${name} ${lastname}`)
 })
 

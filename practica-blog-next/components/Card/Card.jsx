@@ -16,6 +16,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
         })}>
         <img src={`https://images.unsplash.com/${unsplashID}`} alt={unsplashAlt} />
         <section>
+        <div className={styles["card-content"]}>
             <header>
                 <div className={styles["card-tags"]}>
                     {tags.map((tag)=> {
@@ -28,6 +29,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
                 <Time>{date}</Time>
             </header>
             <Paragraph>{extract}</Paragraph>
+        </div>
             <footer>
                 <Author name={author}></Author>
                 <Paragraph size='xs' isHelpText as="span">{readTime}</Paragraph>

@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import mongo from './mongodb.js'
 
 dotenv.config()
 
@@ -10,9 +11,9 @@ app.get("/", (req, res) => {
     res.send("API is running")
 })
 
-app.get("/posts", (req, res) => {
-    const post = []
-    res.send({ post })
+app.get("/posts", async (req, res) => {
+    const posts = await mongo("posts")
+    res.json({ posts })
 })
 app.post("/create-post", (req, res) => {
     const post = {}

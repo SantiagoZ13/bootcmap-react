@@ -17,7 +17,7 @@ function Card({unsplashID, unsplashAlt, tags, title, extract, date, author, read
         <img src={`https://images.unsplash.com/${unsplashID}`} alt={unsplashAlt} />
         <section>
             <header>
-                <div>
+                <div className={styles["card-tags"]}>
                     {tags.map((tag)=> {
                         return <Tag isExtended={isExtended}>{tag}</Tag>
                         })

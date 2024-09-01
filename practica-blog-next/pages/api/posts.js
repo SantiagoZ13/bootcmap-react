@@ -1,3 +1,4 @@
+const api_url = process.env.API_URL || "https://dummyjson.com"
 function calculateReadTime(text){
   const WORDS_PER_MINUTE = 200
   const time = Math.ceil(text.split(" ").length / WORDS_PER_MINUTE)
@@ -10,7 +11,7 @@ function reduceWords(text){
 }
 
 export default async function handler(req, res) {
-  const {posts} = await fetch("https://dummyjson.com/posts").then((data) => data.json())
+  const {posts} = await fetch(`${api_url}/posts`).then((data) => data.json())
   
   const mappedPost = posts.map((post) => ({
 
